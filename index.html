@@ -240,7 +240,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/wubo.github.io/2019/09/11/2019-09-11-hexo+gitpage搭建blog/" class="post-title-link" itemprop="url">hexo+gitpage搭建博客</a>
+            <a href="/wubo.github.io/2019/09/11/2019-09-11-hexo+gitpage搭建blog/" class="post-title-link" itemprop="url">Hexo+GitPage搭建自己的博客</a>
           
         </h1>
 
@@ -266,7 +266,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-16 11:05:20" itemprop="dateModified" datetime="2019-09-16T11:05:20+08:00">2019-09-16</time>
+                <time title="Modified: 2019-09-16 13:29:27" itemprop="dateModified" datetime="2019-09-16T13:29:27+08:00">2019-09-16</time>
               </span>
             
           
@@ -282,40 +282,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>  &ensp;&ensp;为什么我要用 Hexo + GitPage 搭建博客？为什么要用Hexo,起初我并不了解，带着疑惑我一步步搭建完博客之后，我有所总结。所以先告诉大家为什么，然后再来说怎么做。<br> -<font color="Blue">Hexo</font><br>     &ensp;&ensp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，使用 Node.js 渲染页面，在几秒内，即可利用靓丽的主题生成静态网页。<br> -<font color="Blue">GitPage</font><br>     &ensp;&ensp;GitPage 允许你将你的博客创建为一个 GitHub Project，通过 your-account.github.io 这样的特殊项目名称与 GitPage 进行关联，然后，你只需要像平时一样 commit 你的博文到 GitHub 上就 OK 了，GitPage 会自动将你的更新部署出去，完全不需要考虑服务器、数据库、运维、甚至 HTML 等这些发布站点的必备技能，所以 GitPage 诞生的目的就是要把你的专注点拉回到写文章上而不需要花时间去考虑其它事情。<br> -<font color="Blue">两者结合Hexo+GitPage</font><br>    &ensp;&ensp;利用hexo本地编写博客搭建框架，发布到gitpage上。现实中遇到新的技术，项目，它们需要的文档并不是写几个 Readme 就能讲清楚的，这种情况下就急需一个站点来详尽展示此技术的功能、用法、及更新动态等等，认真做好博客，相信你我都会受益于此。</p>
-<h2 id="搭建-Node-js-环境"><a href="#搭建-Node-js-环境" class="headerlink" title="搭建 Node.js 环境"></a>搭建 Node.js 环境</h2><p>&ensp;&ensp;Node.js 官网：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>下载<br>保持默认设置即可，一路Next，安装很快就结束了。然后打开命令提示符，输入node -v、npm -v，出现版本号则说明 Node.js 环境配置成功<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-cmd.jpg?raw=true%22" alt="abouten"></p>
-<h2 id="搭建-Git-环境"><a href="#搭建-Git-环境" class="headerlink" title="搭建 Git 环境"></a>搭建 Git 环境</h2><p>&ensp;&ensp;git 下载 <a href="https://pc.qq.com/detail/13/detail_22693.html" target="_blank" rel="noopener">https://pc.qq.com/detail/13/detail_22693.html</a><br>下载安装包桌面右键，打开Git Bush Here，输入git –version，出现版本号则说明 Git 环境配置成功，第二步完成<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-bash.jpg?raw=true" alt="gitpage" title="the page"></p>
-<h2 id="GitHub-注册和配置"><a href="#GitHub-注册和配置" class="headerlink" title="GitHub 注册和配置"></a>GitHub 注册和配置</h2><p>&ensp;&ensp;Github注册：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>创建仓库：Repository name 使用自己的用户名，命名规则为yourname.github.io，访问 yourname.github.io，如果可以正常访问，那么 Github 的配置已经结束了。<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage1.jpg?raw=true" alt="thesome" title="name"></p>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>&ensp;&ensp;出现404 在Settings中找到github pages 将source改成master branch 当提示Your site is published at https://××××.github.io/×××.github.io/即为成功，出现提示CNAME命名不规范在&lt;&gt;Code中删除CNAME<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage2.jpg?raw=true" alt="aousd" title="CNAME"></p>
-<h2 id="安装配置-Hexo"><a href="#安装配置-Hexo" class="headerlink" title="安装配置 Hexo"></a>安装配置 Hexo</h2><p>&ensp;&ensp;在命令行cmd中输入npm install hexo-cli -g 在桌面右击进入gitbash，输入hexo version查看Hexo的版本，在电脑中建立一个名为【hexo】的文件夹，新建的文件夹右击打开gitbash，输入hexo init 命令，接着输入hexo server，您的网站会在<a href="http://localhost:4000下启动。如果http://localhost:4000能够正常访问，则说明" target="_blank" rel="noopener">http://localhost:4000下启动。如果http://localhost:4000能够正常访问，则说明</a> Hexo 本地博客已经搭建起来了,按ctrl+C可以停止server.</p>
-<h5 id="注意1：执行hexo-server提示找不到该指令"><a href="#注意1：执行hexo-server提示找不到该指令" class="headerlink" title="注意1：执行hexo server提示找不到该指令"></a>注意1：执行hexo server提示找不到该指令</h5><p>&ensp;&ensp;解决办法：在Hexo 3.0 后server被单独出来了，需要安装server，安装的命令如下：在桌面右击进入gitbash，输入npm install hexo -server –save</p>
-<p>接下来新打开一个git bash命令行窗口，cd到/D/hexo下，执行 hexo new “My New Post” 命令,可以生成一篇新的文章 “My New Post”，打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可以预览到新生成的文章。<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-hexo.jpg?raw=true" alt title="hexo"></p>
+          <h2 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h2><p>  &emsp;&emsp;为什么我要用 Hexo + GitPage 搭建博客？为什么要用Hexo,起初我并不了解，带着疑惑我一步步搭建完博客之后，我有所总结。所以先告诉大家为什么，然后再来说怎么做。<br>     &emsp;&emsp;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，使用 Node.js 渲染页面，在几秒内，即可利用靓丽的主题生成静态网页。<br>     &emsp;&emsp;GitPage 允许你将你的博客创建为一个 GitHub Project，通过 your-account.github.io 这样的特殊项目名称与 GitPage 进行关联，然后，你只需要像平时一样 commit 你的博文到 GitHub 上就 OK 了，GitPage 会自动将你的更新部署出去，完全不需要考虑服务器、数据库、运维、甚至 HTML 等这些发布站点的必备技能，所以 GitPage 诞生的目的就是要把你的专注点拉回到写文章上而不需要花时间去考虑其它事情。<br>    &emsp;&emsp;最后利用hexo本地编写文章，搭建框架，然后发布到GitPage上。其实在现实中遇到新的技术，项目，它们需要的文档并不是写几个 Readme 就能讲清楚的，这种情况下就急需一个站点来详尽展示此技术的功能、用法、及更新动态等，认真做好记录，相信我们都会受益于此。</p>
+<h2 id="2、搭建-Node-js-环境"><a href="#2、搭建-Node-js-环境" class="headerlink" title="2、搭建 Node.js 环境"></a>2、搭建 Node.js 环境</h2><p>&emsp;&emsp;Node.js 官网：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>下载保持默认设置即可，一路Next，安装很快就结束了。然后打开命令提示符，输入node -v、npm -v，出现版本号则说明 Node.js 环境配置成功<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-cmd.jpg?raw=true%22" alt="abouten"></p>
+<h2 id="3、搭建-Git-环境"><a href="#3、搭建-Git-环境" class="headerlink" title="3、搭建 Git 环境"></a>3、搭建 Git 环境</h2><p>&emsp;&emsp;git 下载 <a href="https://pc.qq.com/detail/13/detail_22693.html" target="_blank" rel="noopener">https://pc.qq.com/detail/13/detail_22693.html</a>下载安装包桌面右键，打开Git Bush Here，输入git –version，出现版本号则说明 Git 环境配置成功，第二步完成<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-bash.jpg?raw=true" alt="gitpage" title="the page"></p>
+<h3 id="emsp-3-1-GitHub-注册和配置"><a href="#emsp-3-1-GitHub-注册和配置" class="headerlink" title="&emsp; 3.1 GitHub 注册和配置"></a>&emsp; 3.1 GitHub 注册和配置</h3><p>&emsp;&emsp;Github注册：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>创建仓库：Repository name 使用自己的用户名，命名规则为yourname.github.io，访问 yourname.github.io，如果可以正常访问，那么 Github 的配置已经结束了。<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage1.jpg?raw=true" alt="thesome" title="name"></p>
+<h4 id="emsp-3-2-注意"><a href="#emsp-3-2-注意" class="headerlink" title="&emsp;3.2 注意"></a>&emsp;3.2 注意</h4><p>&emsp;&emsp;出现404 在Settings中找到github pages 将source改成master branch 当提示Your site is published at https://××××.github.io/×××.github.io/即为成功，出现提示CNAME命名不规范在&lt;&gt;Code中删除CNAME<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage2.jpg?raw=true" alt="aousd" title="CNAME"></p>
+<h2 id="4、安装配置-Hexo"><a href="#4、安装配置-Hexo" class="headerlink" title="4、安装配置 Hexo"></a>4、安装配置 Hexo</h2><p>&emsp;&emsp;在命令行cmd中输入npm install hexo-cli -g 在桌面右击进入gitbash，输入hexo version查看Hexo的版本，在电脑中建立一个名为【hexo】的文件夹，新建的文件夹右击打开gitbash，输入hexo init 命令，接着输入hexo server，您的网站会在<a href="http://localhost:4000下启动。如果http://localhost:4000能够正常访问，则说明" target="_blank" rel="noopener">http://localhost:4000下启动。如果http://localhost:4000能够正常访问，则说明</a> Hexo 本地博客已经搭建起来了,按ctrl+C可以停止server.</p>
+<h3 id="emsp-4-1-注意1：执行hexo-server提示找不到该指令"><a href="#emsp-4-1-注意1：执行hexo-server提示找不到该指令" class="headerlink" title="&emsp;4.1 注意1：执行hexo server提示找不到该指令"></a>&emsp;4.1 注意1：执行hexo server提示找不到该指令</h3><p>&emsp;&emsp;解决办法：在Hexo 3.0 后server被单独出来了，需要安装server，安装的命令如下：在桌面右击进入gitbash，输入npm install hexo -server –save接下来新打开一个git bash命令行窗口，cd到/D/hexo下，执行 hexo new “My New Post” 命令,可以生成一篇新的文章 “My New Post”，打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可以预览到新生成的文章。<br><img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-git-hexo.jpg?raw=true" alt title="hexo"></p>
 <p>执行 hexo generate命令可以将markdown文章生成静态网页，该命令执行完后，会在 D:\Hexo\public 目录下生成一系列html，css等文件。</p>
-<h2 id="部署博客到-github"><a href="#部署博客到-github" class="headerlink" title="部署博客到 github"></a>部署博客到 github</h2><p>方法有两种 </p>
-<h4 id="方法一是配置-config-yml文件，在文件中找到下面的内容"><a href="#方法一是配置-config-yml文件，在文件中找到下面的内容" class="headerlink" title="方法一是配置_config.yml文件，在文件中找到下面的内容"></a>方法一是配置_config.yml文件，在文件中找到下面的内容</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Deployment</span><br><span class="line">               Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">               deploy:</span><br><span class="line">               type:</span><br></pre></td></tr></table></figure>
+<h2 id="5、部署博客到-github"><a href="#5、部署博客到-github" class="headerlink" title="5、部署博客到 github"></a>5、部署博客到 github</h2><p>方法有两种 </p>
+<h4 id="emsp-5-1-方法一-是配置-config-yml文件，在文件中找到下面的内容"><a href="#emsp-5-1-方法一-是配置-config-yml文件，在文件中找到下面的内容" class="headerlink" title="&emsp;5.1 方法一 是配置_config.yml文件，在文件中找到下面的内容"></a>&emsp;5.1 方法一 是配置_config.yml文件，在文件中找到下面的内容</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Deployment</span><br><span class="line">               Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">               deploy:</span><br><span class="line">               type:</span><br></pre></td></tr></table></figure>
 
 <p>改为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Deployment</span><br><span class="line">           Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">           deploy:</span><br><span class="line">           type: git（新版本的hexo必须用git，不然会出错）</span><br><span class="line">           repository:git@github.com:&lt;username&gt;/&lt;username&gt;.git（这里改成你的repository新版本用SSH不然会出错）</span><br><span class="line">           branch: gh-pages（改成你的对应branch）</span><br></pre></td></tr></table></figure>
 
-<p>执行 npm install hexo-deployer-git –save 命令，执行hexo deploy 命令部署博客到github上；部署完成后，在浏览器中打开 https://××××.github.io/×××.github.io/ ，正常显示网页，表明部署成功。<br>注意部署到git上记得修改url，不然可能发布之后有些js和css文件路径找不到！</p>
-<h4 id="方法二-添加ssh我们如何让本地git项目与远程的github建立联系呢？用-SSH-keys"><a href="#方法二-添加ssh我们如何让本地git项目与远程的github建立联系呢？用-SSH-keys" class="headerlink" title="方法二 添加ssh我们如何让本地git项目与远程的github建立联系呢？用 SSH keys"></a>方法二 添加ssh我们如何让本地git项目与远程的github建立联系呢？用 SSH keys</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">生成SSH keys输入你自己的邮箱地址</span><br><span class="line">ssh-keygen -t rsa -C &quot;×××××@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;执行 npm install hexo-deployer-git –save 命令，执行hexo deploy 命令部署博客到github上；部署完成后，在浏览器中打开 https://××××.github.io/×××.github.io/ ，正常显示网页，表明部署成功。注意部署到git上记得修改url，不然可能发布之后有些js和css文件路径找不到！</p>
+<h4 id="emsp-5-2-方法二-添加ssh我们如何让本地git项目与远程的github建立联系呢？用-SSH-keys"><a href="#emsp-5-2-方法二-添加ssh我们如何让本地git项目与远程的github建立联系呢？用-SSH-keys" class="headerlink" title="&emsp;5.2  方法二 添加ssh我们如何让本地git项目与远程的github建立联系呢？用 SSH keys"></a>&emsp;5.2  方法二 添加ssh我们如何让本地git项目与远程的github建立联系呢？用 SSH keys</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">生成SSH keys输入你自己的邮箱地址</span><br><span class="line">ssh-keygen -t rsa -C &quot;×××××@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
-<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，我们按回车不设置密码。添加 SSH Key 到 GitHub<br>打开C:\Users...ssh\id_rsa.pub，此文件里面内容为刚才生成的密钥，准确的复制这个文件的内容，粘贴到<a href="https://github.com/settings/ssh的new" target="_blank" rel="noopener">https://github.com/settings/ssh的new</a> SSH key中<br>测试可以输入下面的命令，看看设置是否成功，<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>的部分不要修改：</p>
+<p>&emsp;&emsp;在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入，我们按回车不设置密码。添加 SSH Key 到 GitHub打开C:\Users...ssh\id_rsa.pub，此文件里面内容为刚才生成的密钥，准确的复制这个文件的内容，粘贴到<a href="https://github.com/settings/ssh的new" target="_blank" rel="noopener">https://github.com/settings/ssh的new</a> SSH key中测试可以输入下面的命令，看看设置是否成功，<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>的部分不要修改：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>如果是下面的反馈：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.</span><br><span class="line"></span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line"></span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
 
-<p>输入yes，然后会看到：</p>
-<p>Hi aierui! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
-<h4 id="配置-Deployment"><a href="#配置-Deployment" class="headerlink" title="配置 Deployment"></a>配置 Deployment</h4><p>在_config.yml文件中，找到Deployment，然后按照如下修改，用户名改成你的：</p>
-<p>需要注意的是：冒号后面记得空一格！</p>
+<p>&emsp;&emsp;输入yes，然后会看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi aierui! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<h4 id="emsp-5-3-配置-Deployment"><a href="#emsp-5-3-配置-Deployment" class="headerlink" title="&emsp;5.3 配置 Deployment"></a>&emsp;5.3 配置 Deployment</h4><p>&emsp;&emsp;在_config.yml文件中，找到Deployment，然后按照如下修改，用户名改成你的。需要注意的是：冒号后面记得空一格！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: github: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 
-<p>本地文件提交到 GitHub Pages<br>hexo clean// 删除旧的 public 文件<br>hexo generate或者hexo g// 生成新的 public 文件<br>hexo deploye或者hexo d// 开始部署<br>在浏览器中输入https://<username>/<username>.github.io（用户名改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联</username></username></p>
-<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>利用 Github网站,可以轻松管理编写自己的博客,文章统一放在网站根目录下的 _posts 的文件夹中<br> <img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage3.jpg?raw=true" alt="gitpage"></p>
-<h5 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h5><p>每一篇文章文件命名采用的是2019-09-10-Hello-2019.md时间+标题的形式，空格用-替换连接。文件的格式是 .md 的 MarkDown 文件。开头大概格式是</p>
-<pre><code> ---
+<p>本地文件提交到 GitHub Pages<br>hexo clean// 删除旧的 public 文件<br>hexo generate或者hexo g// 生成新的 public 文件<br>hexo deploye或者hexo d// 开始部署<br>在浏览器中输入https:/<username>/<username>.github.io（用户名改成你的）看到了 Hexo 与 GitHub Pages 已经成功关联。</username></username></p>
+<h2 id="6、写文章"><a href="#6、写文章" class="headerlink" title="6、写文章"></a>6、写文章</h2><p>&emsp;&emsp;利用 Github网站,可以轻松管理编写自己的博客,文章统一放在网站根目录下的 _posts 的文件夹中，可以在本地编辑然后上传到GitPage上。<br> <img src="https://github.com/MorStardust/wubo.github.io/blob/master/img/post-bg-gitpage3.jpg?raw=true" alt="gitpage"></p>
+<h3 id="emsp-6-1-格式"><a href="#emsp-6-1-格式" class="headerlink" title="&emsp;6.1  格式"></a>&emsp;6.1  格式</h3><p>&emsp;&emsp;每一篇文章文件命名采用的是2019-09-10-Hello-2019.md时间+标题的形式，空格用-替换连接。文件的格式是 .md 的 MarkDown 文件。开头大概格式是</p>
+<pre><code>
 layout:     post                    # 使用的布局（不需要改）
 title:      My First Post               # 标题 
 subtitle:   Hello World, Hello Blog #副标题
@@ -325,7 +324,7 @@ header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - TAG
----</code></pre><p>按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上.      </p>
+</code></pre><p>按格式创建文章后，提交保存。进入你的博客主页，新的文章将会出现在你的主页上。</p>
 
         
       
